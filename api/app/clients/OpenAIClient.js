@@ -966,8 +966,10 @@ ${convo}
 
       const baseURL = extractBaseURL(this.completionsUrl);
       logger.debug('[OpenAIClient] chatCompletion', { baseURL, modelOptions });
+      logger.debug('[OpenAIClient] chatCompletions ---username---', this.username);
       const opts = {
         baseURL,
+        defaultHeaders: { 'X-User-Name': this.username },
       };
 
       if (this.useOpenRouter) {

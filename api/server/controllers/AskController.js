@@ -28,6 +28,7 @@ const AskController = async (req, res, next, initializeClient, addTitle) => {
   });
   const newConvo = !conversationId;
   const user = req.user.id;
+  const username = req.user.username;
 
   const getReqData = (data = {}) => {
     for (let key in data) {
@@ -99,6 +100,7 @@ const AskController = async (req, res, next, initializeClient, addTitle) => {
 
     const messageOptions = {
       user,
+      username,
       parentMessageId,
       conversationId,
       overrideParentMessageId,

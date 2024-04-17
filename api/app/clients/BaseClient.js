@@ -70,7 +70,9 @@ class BaseClient {
 
     const { isEdited, isContinued } = opts;
     const user = opts.user ?? null;
+    const username = opts.username ?? null;
     this.user = user;
+    this.username = username;
     const saveOptions = this.getSaveOptions();
     this.abortController = opts.abortController ?? new AbortController();
     const conversationId = opts.conversationId ?? crypto.randomUUID();

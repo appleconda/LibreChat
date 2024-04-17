@@ -148,6 +148,7 @@ class ChatGPTClient extends BaseClient {
   }
 
   async getCompletion(input, onProgress, abortController = null) {
+    logger.debug('[ChatGptClient] --------------getcompletion function called--------------------');
     if (!abortController) {
       abortController = new AbortController();
     }
